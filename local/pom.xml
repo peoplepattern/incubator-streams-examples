@@ -23,6 +23,7 @@
         <artifactId>streams-examples</artifactId>
         <groupId>org.apache.streams</groupId>
         <version>0.3.1-PP-SNAPSHOT</version>
+        <relativePath>..</relativePath>
     </parent>
 
     <artifactId>streams-examples-local</artifactId>
