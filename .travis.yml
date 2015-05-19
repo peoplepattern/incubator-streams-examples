@@ -4,4 +4,4 @@ jdk:
   - oraclejdk7
 install: mvn -Dmaven.test.skip.exec=true clean -q
 
-script: mvn -Dmaven.test.skip.exec=true install deploy -s settings.xml -q
+script: mvn -Dmaven.test.skip=true install deploy -s settings.xml -q

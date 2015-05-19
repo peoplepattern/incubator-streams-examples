@@ -459,3 +459,15 @@ index 9389c45..4d8e00d 100644
 -  acl: authenticated_read
 +script: mvn -Dmaven.test.skip.exec=true install deploy -s settings.xml -q
 \ No newline at end of file
+diff --git a/.travis.yml b/.travis.yml
+index 4d8e00d..0d1608c 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -4,4 +4,4 @@ jdk:
+   - oraclejdk7
+ install: mvn -Dmaven.test.skip.exec=true clean -q
+ 
+-script: mvn -Dmaven.test.skip.exec=true install deploy -s settings.xml -q
+\ No newline at end of file
++script: mvn -Dmaven.test.skip=true install deploy -s settings.xml -q
+\ No newline at end of file
