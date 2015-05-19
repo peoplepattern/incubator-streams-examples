@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Licensed to the Apache Software Foundation (ASF) under one
-  ~ or more contributor license agreements.  See the NOTICE file
-  ~ distributed with this work for additional information
-  ~ regarding copyright ownership.  The ASF licenses this file
-  ~ to you under the Apache License, Version 2.0 (the
-  ~ "License"); you may not use this file except in compliance
-  ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing,
-  ~ software distributed under the License is distributed on an
-  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-  ~ KIND, either express or implied.  See the License for the
-  ~ specific language governing permissions and limitations
-  ~ under the License.
-  -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
@@ -30,13 +12,13 @@
     <groupId>org.apache.streams</groupId>
     <artifactId>streams-examples</artifactId>
     <version>0.3.1-PP-SNAPSHOT</version>
-    
+
     <packaging>pom</packaging>
     <name>streams-examples</name>
 
     <description>Contributed examples of use cases for Streams.</description>
 
-    <url>http://streams.incubator.apache.org/site/${project.version}/streams-examples</url>
+    <url>http://streams.peoplepattern.com/${project.version}/${project.artifactId}</url>
 
     <licenses>
         <license>
@@ -48,9 +30,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:apache/incubator-streams-examples.git</connection>
-        <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/incubator-streams-examples.git</developerConnection>
-        <url>scm:git:git@github.com:apache/incubator-streams-examples.git</url>
+        <connection>scm:git:git@github.com:peoplepattern/incubator-streams-examples.git</connection>
+        <developerConnection>scm:git:git@github.com:peoplepattern/incubator-streams-examples.git</developerConnection>
+        <url>scm:git:git@github.com:peoplepattern/incubator-streams-examples.git</url>
     </scm>
 
     <developers>
@@ -70,45 +52,25 @@
     </issueManagement>
 
     <ciManagement>
-        <system>jenkins</system>
-        <url>http://builds.apache.org/job/Streams%20Examples/</url>
+        <system>travis</system>
+        <url>https://travis-ci.org/peoplepattern/incubator-streams-examples</url>
     </ciManagement>
 
     <prerequisites>
         <maven>3.0.5</maven>
     </prerequisites>
 
-    <mailingLists>
-        <mailingList>
-            <name>Dev Mailing List</name>
-            <post>dev@streams.incubator.apache.org</post>
-            <subscribe>dev-subscribe@streams.incubator.apache.org</subscribe>
-            <unsubscribe>dev-unsubscribe@streams.incubator.apache.org</unsubscribe>
-        </mailingList>
-        <mailingList>
-            <name>User Mailing List</name>
-            <post>user@streams.incubator.apache.org</post>
-            <subscribe>user-subscribe@streams.incubator.apache.org</subscribe>
-            <unsubscribe>user-unsubscribe@streams.incubator.apache.org</unsubscribe>
-        </mailingList>
-    </mailingLists>
-
     <distributionManagement>
         <repository>
-            <id>streams.releases</id>
-            <name>Streams Releases</name>
-            <url>${release.repository.url}</url>
+            <id>s3.release</id>
+            <name>AWS S3 Release Repository</name>
+            <url>s3://releases.peoplepattern.com</url>
         </repository>
-        <!-- Snapshots (not-releases) are published to this repository -->
         <snapshotRepository>
-            <id>streams.snapshots</id>
-            <name>Streams Snapshots</name>
-            <url>${snapshot.repository.url}</url>
+            <id>s3.snapshot</id>
+            <name>AWS S3 Snapshot Repository</name>
+            <url>s3://snapshots.peoplepattern.com</url>
         </snapshotRepository>
-        <site>
-            <id>streams.site.examples</id>
-            <url>scm:svn:https://svn.apache.org/repos/infra/websites/production/streams/content/site/${project.version}/streams-examples/</url>
-        </site>
     </distributionManagement>
 
     <repositories>
@@ -311,6 +273,13 @@
     </dependencyManagement>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.kuali.maven.wagons</groupId>
+                <artifactId>maven-s3-wagon</artifactId>
+                <version>1.2.1</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
