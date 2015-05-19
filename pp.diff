@@ -400,3 +400,36 @@ index 0000000..d0efc2f
 +    </server>
 +  </servers>
 +</settings>
+diff --git a/pom.xml b/pom.xml
+index aad189b..d3f1ce9 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -130,6 +130,28 @@
+                 <enabled>false</enabled>
+             </snapshots>
+         </repository>
++        <repository>
++            <id>s3.release</id>
++            <name>PP S3 Release Repository</name>
++            <url>s3://releases.peoplepattern.com</url>
++            <releases>
++                <enabled>true</enabled>
++            </releases>
++            <snapshots>
++                <enabled>false</enabled>
++            </snapshots>
++        </repository>
++        <repository>
++            <id>s3.snapshot</id>
++            <name>PP S3 Snapshot Repository</name>
++            <url>s3://snapshots.peoplepattern.com</url>
++            <releases>
++                <enabled>false</enabled>
++            </releases>
++            <snapshots>
++                <enabled>true</enabled>
++            </snapshots>
++        </repository>
+     </repositories>
+ 
+     <properties>
