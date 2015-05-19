@@ -433,3 +433,29 @@ index aad189b..d3f1ce9 100644
      </repositories>
  
      <properties>
+diff --git a/.travis.yml b/.travis.yml
+index 9389c45..4d8e00d 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -1,17 +1,7 @@
+ sudo: false
+ language: java
+ jdk:
+-- oraclejdk7
+-install: mvn -Dmaven.test.skip.exec=true clean install -q
++  - oraclejdk7
++install: mvn -Dmaven.test.skip.exec=true clean -q
+ 
+-script: mvn -Dmaven.test.skip.exec=true deploy -q -s settings.xml
+-
+-deploy:
+-  secret_access_key:
+-    secure: eaqXT+uxinyZVa/5DorLbSQlNSXeeI3yMROBg8wPdyp7ycMXG3uodqpyhUt6gcwayJw2rtjekgzY++iLzHSlKPheTM7a9J+QEB+QvmR77+cSdQb/nG23iisIkMmkpOYrhacoK2PEOF1M38fhu/AEqN1kDGW6DFUC0eLokxqZSgE=
+-  access_key_id:
+-    secure: R4WKDzSs6lCV/Lmo+SV1BEI7X6jR8QK/mUrPT6qxm181ZvnUM+0/UHRAKUMKIsHadTBFuT+f7uEPu/8mVZl1CGQUKMOfJiKH7rDnxV+CHNMplYZDCRMLjBPQ1HHVncxgznQTCJ0AezWSxe80EvC2vD/Kg9ZSBN2//SQIM5Xre40=
+-  provider: s3
+-  bucket: peoplepattern-maven-repo
+-  skip_cleanup: true
+-  acl: authenticated_read
++script: mvn -Dmaven.test.skip.exec=true install deploy -s settings.xml -q
+\ No newline at end of file
