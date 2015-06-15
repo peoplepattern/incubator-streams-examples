@@ -11,7 +11,7 @@
 
     <groupId>org.apache.streams</groupId>
     <artifactId>streams-examples</artifactId>
-    <version>0.3.1-PP-SNAPSHOT</version>
+    <version>0.3.2-PP-SNAPSHOT</version>
 
     <packaging>pom</packaging>
     <name>streams-examples</name>
@@ -169,7 +169,7 @@
             https://repository.apache.org/service/local/staging/deploy/maven2
         </release.repository.url>
 
-        <streams.version>0.3.1-PP-SNAPSHOT</streams.version>
+        <streams.version>0.3.2-PP-SNAPSHOT</streams.version>
 
         <!-- Plugin and Plugin Dependency Versions -->
         <build-helper.plugin.version>1.8</build-helper.plugin.version>
