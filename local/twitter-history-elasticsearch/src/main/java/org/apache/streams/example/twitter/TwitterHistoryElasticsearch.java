@@ -19,21 +19,12 @@
 package org.apache.streams.example.twitter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.typesafe.config.Config;
 import org.apache.streams.config.ComponentConfigurator;
 import org.apache.streams.config.StreamsConfigurator;
 import org.apache.streams.converter.ActivityConverterProcessor;
 import org.apache.streams.core.StreamBuilder;
-import org.apache.streams.elasticsearch.ElasticsearchConfigurator;
 import org.apache.streams.elasticsearch.ElasticsearchPersistWriter;
-import org.apache.streams.elasticsearch.ElasticsearchWriterConfiguration;
 import org.apache.streams.local.builders.LocalStreamBuilder;
-import org.apache.streams.pojo.json.Activity;
-import org.apache.streams.twitter.TwitterStreamConfiguration;
-import org.apache.streams.twitter.TwitterUserInformationConfiguration;
-import org.apache.streams.twitter.processor.TwitterTypeConverter;
-import org.apache.streams.twitter.provider.TwitterConfigurator;
 import org.apache.streams.twitter.provider.TwitterTimelineProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -76,11 +67,11 @@ public class TwitterHistoryElasticsearch implements Runnable {
 
     public void run() {
 
-        TwitterTimelineProvider provider = new TwitterTimelineProvider(config.getTwitter(), ObjectNode.class);
+        TwitterTimelineProvider provider = new TwitterTimelineProvider(config.getTwitter());
         ActivityConverterProcessor converter = new ActivityConverterProcessor();
         ElasticsearchPersistWriter writer = new ElasticsearchPersistWriter(config.getElasticsearch());
 
-        StreamBuilder builder = new LocalStreamBuilder(500);
+        StreamBuilder builder = new LocalStreamBuilder();
 
         builder.newPerpetualStream("provider", provider);
         builder.addStreamsProcessor("converter", converter, 2, "provider");

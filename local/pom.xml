@@ -22,12 +22,11 @@
     <parent>
         <artifactId>streams-examples</artifactId>
         <groupId>org.apache.streams</groupId>
-        <version>0.3.2-PP-SNAPSHOT</version>
-        <relativePath>..</relativePath>
+        <version>0.3.6-PP-SNAPSHOT</version>
     </parent>
 
     <artifactId>streams-examples-local</artifactId>
-    <version>0.3.2-PP-SNAPSHOT</version>
+    <version>0.3.6-PP-SNAPSHOT</version>
 
     <packaging>pom</packaging>
     <name>streams-examples-local</name>

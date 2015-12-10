@@ -11,8 +11,8 @@
 
     <groupId>org.apache.streams</groupId>
     <artifactId>streams-examples</artifactId>
-    <version>0.3.2-PP-SNAPSHOT</version>
-
+    <version>0.3.6-PP-SNAPSHOT</version>
+    
     <packaging>pom</packaging>
     <name>streams-examples</name>
 
@@ -59,6 +59,21 @@
     <prerequisites>
         <maven>3.0.5</maven>
     </prerequisites>
+
+    <mailingLists>
+        <mailingList>
+            <name>Dev Mailing List</name>
+            <post>dev@streams.incubator.apache.org</post>
+            <subscribe>dev-subscribe@streams.incubator.apache.org</subscribe>
+            <unsubscribe>dev-unsubscribe@streams.incubator.apache.org</unsubscribe>
+        </mailingList>
+        <mailingList>
+            <name>User Mailing List</name>
+            <post>user@streams.incubator.apache.org</post>
+            <subscribe>user-subscribe@streams.incubator.apache.org</subscribe>
+            <unsubscribe>user-unsubscribe@streams.incubator.apache.org</unsubscribe>
+        </mailingList>
+    </mailingLists>
 
     <distributionManagement>
         <repository>
@@ -169,7 +184,7 @@
             https://repository.apache.org/service/local/staging/deploy/maven2
         </release.repository.url>
 
-        <streams.version>0.3.2-PP-SNAPSHOT</streams.version>
+        <streams.version>0.3.6-PP-SNAPSHOT</streams.version>
 
         <!-- Plugin and Plugin Dependency Versions -->
         <build-helper.plugin.version>1.8</build-helper.plugin.version>

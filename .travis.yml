@@ -5,3 +5,7 @@ jdk:
 install: mvn -Dmaven.test.skip.exec=true clean -q
 
 script: mvn -Dmaven.test.skip=true install deploy -s settings.xml -q
+
+addons:
+  artifacts: true
+
