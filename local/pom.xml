@@ -22,11 +22,11 @@
     <parent>
         <artifactId>streams-examples</artifactId>
         <groupId>org.apache.streams</groupId>
-        <version>0.2-incubating-SNAPSHOT</version>
+        <version>0.3.6-PP-SNAPSHOT</version>
     </parent>
 
     <artifactId>streams-examples-local</artifactId>
-  <version>0.3.1-PP-SNAPSHOT</version>
+    <version>0.3.6-PP-SNAPSHOT</version>
 
     <packaging>pom</packaging>
     <name>streams-examples-local</name>
@@ -41,7 +41,7 @@
 	<module>elasticsearch-hdfs</module>
 	<module>elasticsearch-reindex</module>
 	<module>mongo-elasticsearch-sync</module>
-	<module>twitter-follow-graph</module>
+	<!--<module>twitter-follow-graph</module>-->
 	<module>twitter-history-elasticsearch</module>
 	<module>twitter-userstream-elasticsearch</module>
     </modules>

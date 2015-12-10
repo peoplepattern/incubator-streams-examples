@@ -128,6 +128,11 @@ public class TwitterUserstreamElasticsearch implements Runnable {
         }
 
         @Override
+        public String getId() {
+            return "SetDeleteIdProcessor";
+        }
+
+        @Override
         public void prepare(Object configurationObject) {
 
 
